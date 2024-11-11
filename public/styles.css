@@ -23,14 +23,32 @@ body {
     align-items: center;
     z-index: 100;
 }
+navbar {
+    background-color: transparent; /* Transparent background */
+    position: fixed;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+  }
+  
+  
+  .navbar a:hover {
+    opacity: 0.8; /* Slight fade on hover */
+  }
 
 .navbar a {
     position: relative;
     font-size: 16px;
-    color: black;
+    background: linear-gradient(to right, #eb0404, #1b1a1a); /* Gradient colors */
+    -webkit-background-clip: text;
+    color: transparent;
     text-decoration: none;
     font-weight: 500;
     margin-right: 30px;
+    transition: opacity 0.3s ease;
+
 }
 
 .navbar a::after{
@@ -132,7 +150,9 @@ body {
 
 .content .logo {
     font-size: 50px;
-    color: #e34949;
+    background: linear-gradient(to right, #eb0404, #1b1a1a); /* Gradient colors */
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .text-sci h2 {
@@ -158,7 +178,9 @@ body {
 
 .social-icon a i { 
     font-size: 22px;
-    color: #e4e4e4;
+    background: linear-gradient(to right, #eb0404, #1b1a1a); /* Gradient colors */
+    -webkit-background-clip: text;
+    color: transparent;
     margin-right: 10px;
     transition: .5s ease;
 }
@@ -174,6 +196,13 @@ body {
     width: calc(100% - 58%);
     height: 100%;
 }
+.logreg-box  .form-box h2{
+    color: #D32F2F;
+}
+
+.logreg-box  .form-box i{
+    color: #424242;
+}
 
 .logreg-box  .form-box {
     position: absolute;
@@ -186,8 +215,7 @@ body {
     backdrop-filter: blur(20px);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px ;
-    color: #e34949;
-    text-shadow: 2px 2px 4px rgb(191, 50, 50)
+    color: #FFFFFF;
 }
 
 .form-box h2 {
@@ -214,7 +242,6 @@ body {
     color: black;
     font-weight: 500;
     padding-right: 28px;
-    text-shadow: 2px 2px 4px white
 }
 
 .input-box label {
@@ -226,6 +253,7 @@ body {
     font-weight: 500;
     pointer-events: none;
     transition: .5s ease;
+    color: #E0E0E0;
 }
 
 .input-box input:focus~label,
@@ -254,7 +282,7 @@ body {
 }
 
 .remember-forget a {
-    color: #e4e4e4;
+    color: #D32F2F;
     text-decoration: none;
 }
 
@@ -265,7 +293,7 @@ body {
 .btn {
     width: 100%;
     height: 45px;
-    background: #c4103d;
+    background: #82B1FF;
     border: none;
     outline: none;
     border-radius: 4px;
@@ -276,6 +304,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, -5);
 }
 
+.btn:hover{
+    background-color: #4CAF50;
+}
+
+
 .form-box .login-register {
     font-size: 14.5px;
     text-align: center;
@@ -284,7 +317,7 @@ body {
 }
 
 .login-register p a {
-    color: #e4e4e4;
+    color: #D32F2F;
     font-weight: 600;
     text-decoration: none;
 }
