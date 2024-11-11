@@ -67,7 +67,8 @@ app.use(session({
     }
 }));
 
-mongoose.connect(mongoUri, {
+// MongoDB client for session storage
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -99,13 +100,13 @@ const tokenSchema = new mongoose.Schema({
 const Token = mongoose.model('Token', tokenSchema);
 
 // Helper Functions
-async function hashPassword(password) {
+function hashPassword(password) {
     const saltRounds = 10;
-    return await bcrypt.hash(password, saltRounds);
+    return bcrypt.hashSync(password, saltRounds);
 }
 
 function isValidPassword(password) {
-    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
     return passwordRegex.test(password);
 }
 
