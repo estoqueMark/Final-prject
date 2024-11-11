@@ -67,8 +67,7 @@ app.use(session({
     }
 }));
 
-// MongoDB client for session storage
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -100,13 +99,13 @@ const tokenSchema = new mongoose.Schema({
 const Token = mongoose.model('Token', tokenSchema);
 
 // Helper Functions
-function hashPassword(password) {
+async function hashPassword(password) {
     const saltRounds = 10;
-    return bcrypt.hashSync(password, saltRounds);
+    return await bcrypt.hash(password, saltRounds);
 }
 
 function isValidPassword(password) {
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     return passwordRegex.test(password);
 }
 
@@ -342,5 +341,5 @@ app.post('/logout', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on ${PORT}`);
 });
