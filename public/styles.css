@@ -35,7 +35,8 @@ navbar {
   
   
   .navbar a:hover {
-    opacity: 0.8; /* Slight fade on hover */
+    color: black; /* Light cyan */
+    text-shadow: 0px 0px 5px wheat; /* Subtle glow effect */
   }
 
 .navbar a {
@@ -43,7 +44,8 @@ navbar {
     font-size: 16px;
     background: linear-gradient(to right, #eb0404, #1b1a1a); /* Gradient colors */
     -webkit-background-clip: text;
-    color: transparent;
+    color: #FFFFFF; /* White color for better contrast on dark backgrounds */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     font-weight: 500;
     margin-right: 30px;
@@ -58,7 +60,7 @@ navbar {
     width: 100%;
     height: 2px;
     bottom: -6px;
-    background: black;
+    background: #00C9C7;
     border-radius: 5px;
     transform: translateY(10px);
     transition: .5;
@@ -78,6 +80,7 @@ navbar {
     border-radius: 6px;
     display: flex;
     align-items: center;
+    
 }
 
 .search-bar input{
@@ -86,12 +89,14 @@ navbar {
     border: none;
     outline: none;
     font-size: 16px;
-    color: #e34949;
+    color: #FFFFFF; /* White color for better contrast on dark backgrounds */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     padding-left: 10px;
 }
 
 .search-bar input::placeholder{
-    columns: #e34949;
+    color: #FFFFFF; /* White color for better contrast on dark backgrounds */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .search-bar button{
@@ -108,7 +113,8 @@ navbar {
 
 .search-bar button i {
     font-size: 22px;
-    color: #e4e4e4;
+     color: #FFFFFF; /* White color for better contrast on dark backgrounds */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);;
 }
 
 .background {
@@ -164,7 +170,7 @@ navbar {
 
 .text-sci h2 span {
     font-size: 25px;
-    color: #ec8342;
+    color: #FFA500;
     text-shadow: 2px 2px 4px #000000;
 }
 
@@ -172,7 +178,10 @@ navbar {
 .text-sci p {
     font-size: 16px;
     margin: 20px 0;
-    text-shadow: 1px 1px 2px black, 0 0 25px rgb(231, 194, 61), 0 0 5px darkblue;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: rgba(30, 58, 95, 0.6);
+    padding: 20px;
+    border-radius: 8px;
 }
 
 
@@ -197,11 +206,18 @@ navbar {
     height: 100%;
 }
 .logreg-box  .form-box h2{
-    color: #D32F2F;
+    color: white; /* Royal blue */
+    text-shadow: 2px 2px 4px black;
 }
 
+
+.logreg-box  .form-box h2:hover {
+    color: #5D3FD3; /* Deep purple */
+  }
+
+
 .logreg-box  .form-box i{
-    color: #424242;
+    color: white;
 }
 
 .logreg-box  .form-box {
@@ -221,7 +237,7 @@ navbar {
 .form-box h2 {
     font-size: 32px;
     text-align: center;
-    text-shadow: 2px 2px 4px white
+    text-shadow: 2px 2px 4px black
 }
 
 .form-box .input-box {
@@ -230,6 +246,8 @@ navbar {
     height: 50px;
     border-bottom: 2px solid #e4e4e4;
     margin: 30px 0;
+
+
 }
 
 .input-box input {
@@ -249,12 +267,14 @@ navbar {
     top: 50%;
     left: 0;
     transform: translateY(-90%);
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 16px; /* Keep the font size moderate */
+    font-weight: normal; /* Light, but still readable */
     pointer-events: none;
     transition: .5s ease;
-    color: #E0E0E0;
+    color: #FFFFFF; /* White color for better contrast on dark backgrounds */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 
 .input-box input:focus~label,
 .input-box input:valid~label{
@@ -282,18 +302,21 @@ navbar {
 }
 
 .remember-forget a {
-    color: #D32F2F;
+    color: #20B2AA;
     text-decoration: none;
 }
 
 .remember-forget a:hover {
     text-decoration: underline;
+    color: #40E0D0;
+    transition: color 0.3s ease;
 }
 
+/* Button Styling */
 .btn {
     width: 100%;
     height: 45px;
-    background: #82B1FF;
+    background: #00C9C7;
     border: none;
     outline: none;
     border-radius: 4px;
@@ -302,10 +325,21 @@ navbar {
     color: #e4e4e4;
     font-weight: 500;
     box-shadow: 0 0 10px rgba(0, 0, 0, -5);
+    margin: 10px 0; /* Adds vertical space between buttons */
 }
 
+/* Container for Buttons */
+.btn-container {
+    padding: 5px;
+    border-radius: 5px;
+    gap: 40px; /* Adds horizontal or vertical space between buttons if using flex */
+    display: flex;
+    flex-direction: column; /* Stacks buttons vertically */
+}
+
+
 .btn:hover{
-    background-color: #4CAF50;
+    background-color: #6DCE6D;
 }
 
 
@@ -317,11 +351,13 @@ navbar {
 }
 
 .login-register p a {
-    color: #D32F2F;
-    font-weight: 600;
+    color: #20B2AA;
     text-decoration: none;
+
 }
 
 .login-register p a:hover {
     text-decoration: underline;
+    color: #40E0D0;
+    transition: color 0.3s ease;
 }
