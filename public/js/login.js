@@ -48,9 +48,9 @@ document.getElementById('togglePassword').addEventListener('click', function () 
     if (data.success) {
     // Check user role and redirect accordingly
     if (data.role === 'admin') {
-    window.location.href = '/admin_dashboard.html';
+    window.location.href = '/admin_dashboard';
     } else {
-    window.location.href = '/dashboard.html';
+    window.location.href = '/dashboard';
     }
     } else {
     // Display error message
